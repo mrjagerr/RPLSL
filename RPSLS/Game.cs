@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Linq;
 using System.Runtime.Intrinsics.X86;
 using System.Text;
@@ -42,13 +43,22 @@ namespace RPSLS
         {
             Console.WriteLine("How many people will be playing?");
             int numberOfHumanPlayers = Convert.ToInt32(Console.ReadLine());
+            if (numberOfHumanPlayers <= 0) {
+                Console.WriteLine("Please choose again.");
+            }
+            else if (numberOfHumanPlayers > 2) 
+            {   
+                Console.WriteLine("Please choose again.");
+            }
+            
 
             return numberOfHumanPlayers;
         }
 
         public void CreatePlayerObjects(int numberOfHumanPlayers)
         {
-            numberOfHumanPlayers = (ChooseNumberOfHumanPlayers());
+         numberOfHumanPlayers = ChooseNumberOfHumanPlayers();   
+            
           
         }
 
@@ -67,10 +77,11 @@ namespace RPSLS
             //            step 1.display the rules of the game
             WelcomeMessage();
             //]step 2.ask how many human players are in the game
-            ChooseNumberOfHumanPlayers();
-            Console.WriteLine(ChooseNumberOfHumanPlayers());
-            // step3 validate the number of human players if only one player then face computer opponent  if 2 players face each other. (edited)
 
+            ChooseNumberOfHumanPlayers();
+            
+            // step3 validate the number of human players if only one player then face computer opponent  if 2 players face each other. (edited)
+            
             // step 4 once the numbers of human players are selected show the number of gestures that can be chosen
             //step 5 player selects  gesture
             //step 6 gesture is imputed vrs computer gesture or other human player gesture.Based on the rules decide winner.
