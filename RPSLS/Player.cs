@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace RPSLS
-{
+{//Parent class
     internal abstract class Player
     {
         //Member Variabes (HAS A)
