@@ -28,3 +28,4 @@ namespace RPSLS
         public abstract void ChooseGesture();
     }
 }
+//computer is a player/ human is a player/player two is human
