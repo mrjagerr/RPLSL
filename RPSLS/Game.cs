@@ -3,10 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Runtime.Intrinsics.X86;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using static System.Formats.Asn1.AsnWriter;
 
 namespace RPSLS
@@ -15,23 +17,8 @@ namespace RPSLS
     {
         //Member Variabes (HAS A)
         public Player playerOne;
-        
-        
-
-
-
-
-
-
-
         public Player playerTwo;
-
-
-
-
-
-        public Player playerThree;
-        // computer player
+       
 
 
 
@@ -40,9 +27,8 @@ namespace RPSLS
 
 
 
-
-        //Constructor
-        public Game()
+            //Constructor
+            public Game()
         {
 
         }
@@ -75,38 +61,41 @@ namespace RPSLS
 
         public void CreatePlayerObjects(int numberOfHumanPlayers)
         { // issue is implimenting and creating the player classes and computer class
-            // computer will use random.rand to randomize in the list. 
-            numberOfHumanPlayers= ChooseNumberOfHumanPlayers();
+          // computer will use random.rand to randomize in the list. 
+
+
+            numberOfHumanPlayers = ChooseNumberOfHumanPlayers();
+
+            
             if (numberOfHumanPlayers == 1)
             {
+                Console.WriteLine("Player one enter your name.");
+                Human playerone = new Human("");
+                playerone.name = Console.ReadLine();
                 
-                Player playertwo = playerTwo;
-                Console.WriteLine("Player one please enter your name.");
-                playerOne.name = Console.ReadLine();
-                playerTwo.name = "Computer";
-                return;
+               
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             }
-            else if (numberOfHumanPlayers == 2)
-            {
-                Player playerone = playerOne;
-                Player playerthree = playerThree;
-                Console.WriteLine("Player one please enter your name.");
-                playerOne.name = Console.ReadLine();
-                Console.WriteLine("Player two please enter your name.");
-                playerThree.name = Console.ReadLine();
-                return;
-            }
-            
-            
-              
-
-
-
-
-
-
         }
-
         public void CompareGestures()
         {
             //if else statements using case and switch
