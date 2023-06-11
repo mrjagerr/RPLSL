@@ -111,13 +111,89 @@ namespace RPSLS
                     Console.WriteLine("It is a tie.");
                     
 
-
-
                 }
-
-
-
-
+                else
+                {
+                    if (playerOne.chosenGesture == "rock")
+                    {
+                        if (playerTwo.chosenGesture == "lizard"|| playerTwo.chosenGesture == "scissors")
+                        {
+                            Console.WriteLine($"{playerOne.name} you have won{playerOne.chosenGesture}crushes {playerTwo.chosenGesture}");
+                            playerOne.score++;
+                        }
+                        else if (playerTwo.chosenGesture == "paper")
+                        {
+                            Console.WriteLine($"{playerOne.name} you lose. Paper covers rock");
+                            playerTwo.score++;
+                        }
+                        else if(playerOne.chosenGesture == "spock")
+                        {
+                            Console.WriteLine($"{playerOne.name} you lose. Spock vaporizes rock");
+                            playerTwo.score++;
+                        }
+                    }
+                    else if (playerOne.chosenGesture == "paper")
+                    {
+                        if (playerTwo.chosenGesture == "spock")
+                        {
+                            Console.WriteLine($"{playerOne.name} wins. Paper disproves Spock");
+                            playerOne.score++;
+                        }
+                        else if (playerTwo.chosenGesture == "rock")
+                        {
+                            Console.WriteLine($"{playerOne.name} wins. Paper covers rock.");
+                            playerOne.score++;
+                        }
+                        else if  (playerTwo.chosenGesture == "lizard")
+                            {
+                                Console.WriteLine($"{playerOne.name} loses. Lizard eats paper.");
+                                playerTwo.score++;
+                            }
+                        else if (playerTwo.chosenGesture == "scissors")
+                        {
+                            Console.WriteLine($"{playerOne.name} loses. Scissors cuts paper.");
+                            playerTwo.score++;
+                        }
+                    }
+                    else if( playerOne.chosenGesture == "lizard")
+                    {
+                        if(playerTwo.chosenGesture == "paper")
+                        {
+                            Console.WriteLine($"{playerOne.name} wins. Lizard eats paper.");
+                            playerOne.score++;
+                        }
+                        else if (playerTwo.chosenGesture == "spock")
+                        {
+                            Console.WriteLine($"{playerOne.name} wins. Lizard poisons spock");
+                            playerOne.score++;
+                        }
+                        else if(playerTwo.chosenGesture == "scissors") 
+                        {
+                            Console.WriteLine($"{playerOne.name} loses. Scissors decapitates lizard");
+                            playerTwo.score++;
+                        }
+                        else if (playerTwo.chosenGesture == "rock")
+                        {
+                            Console.WriteLine($"{playerOne.name} loses . Rock crushes lizard");
+                            playerTwo.score++;
+                        }
+                    }
+                    else if ( playerOne.chosenGesture == "spock")
+                    {
+                        if (playerTwo.chosenGesture == "rock")
+                        {
+                            Console.WriteLine($"{playerOne.name} wins.Spock vaporizes rock");
+                            playerOne.score++;
+                        }
+                        else if (playerTwo.chosenGesture == "scissors")
+                        {
+                            Console.WriteLine($"{playerOne.name} wins. Spock crushes scissors");
+                            playerOne.score++;
+                                
+                        }
+                    }
+                }
+                
 
 
 
