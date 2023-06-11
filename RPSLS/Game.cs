@@ -18,7 +18,6 @@ namespace RPSLS
         //Member Variabes (HAS A)
         public Player playerOne;
         public Player playerTwo;
-       
 
 
 
@@ -27,8 +26,9 @@ namespace RPSLS
 
 
 
-            //Constructor
-            public Game()
+
+        //Constructor
+        public Game()
         {
 
         }
@@ -49,7 +49,7 @@ namespace RPSLS
                 "Spock vaporizes Rock\r\n " +
                 "\r\n " +
                "The game will be the best out of 3.");
-              
+
         }
 
         public int ChooseNumberOfHumanPlayers()
@@ -66,23 +66,54 @@ namespace RPSLS
 
             numberOfHumanPlayers = ChooseNumberOfHumanPlayers();
 
+
             
-            if (numberOfHumanPlayers == 1)
+           if (numberOfHumanPlayers == 1)
             {
                 Console.WriteLine("Player one enter your name.");
                 Human playerone = new Human("");
+                playerOne = playerone;
                 playerone.name = Console.ReadLine();
-                
-               
-                
+
+                Computer computer = new Computer("");
+                playerTwo = computer;
+                computer.name = "Computer";
+                Console.WriteLine($"Your opponent will be {computer.name}");
+            }
+            else if (numberOfHumanPlayers == 2)
+            {
+                Console.WriteLine("Player one enter your name.");
+                Human playerone = new Human("");
+                playerOne = playerone;
+                playerone.name = Console.ReadLine();
+
+                Console.WriteLine("Player two enter your name.");
+                Human playertwo = new Human("");
+                playerTwo = playertwo;
+                playertwo.name = Console.ReadLine();
+            }
+
+
+        }
+        //if else statements using case and switch
+        public void CompareGestures()
+        {
+            
+           
+            while ((playerOne.score != 3) || (playerTwo.score != 3))
+            {
+                playerOne.ChooseGesture();
+                playerTwo.ChooseGesture();
+
+
+                if (playerOne.ChooseGesture == playerTwo.ChooseGesture)
+                {
+                    Console.WriteLine("It is a tie.");
+                    
 
 
 
-
-
-
-
-
+                }
 
 
 
@@ -95,11 +126,14 @@ namespace RPSLS
 
 
             }
-        }
-        public void CompareGestures()
-        {
-            //if else statements using case and switch
-            
+
+
+
+
+
+
+
+
 
         }
 
@@ -110,11 +144,10 @@ namespace RPSLS
                 Console.WriteLine("Player One has won.");
             }
             else if (playerTwo.score == 3)
-            {
+            
                 Console.WriteLine("Player two has won.");
 
-            }
-            else;
+            
 
         }
 
@@ -125,14 +158,14 @@ namespace RPSLS
             //step 2.ask how many human players are in the game
             CreatePlayerObjects(0);
             // step3 validate the number of human players if only one player then face computer opponent  if 2 players face each other. (edited)
-
+            CompareGestures();
             // step 4 once the numbers of human players are selected show the number of gestures that can be chosen
             //step 5 player selects  gesture
             //step 6 gesture is imputed vrs computer gesture or other human player gesture.Based on the rules decide winner.
             // step 7 add win to the player whos won score(edited)
             // step 8 repeat step 6 til a winner of 3 rounds is decided.
             // step 9 Declare the winner of the game. (edited)
-
+            DisplayGameWinner();
         }
     }
 }
