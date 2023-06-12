@@ -18,7 +18,7 @@ namespace RPSLS
         public Player()
         {
             this.name = name;
-            gestures = new List<string> { "rock", "paper", "scissors", "lizard", "Spock" };
+            gestures = new List<string> { "rock", "paper", "scissors", "lizard", "spock" };
             chosenGesture = "";
             score = 0;
         }

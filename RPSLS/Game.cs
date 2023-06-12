@@ -100,10 +100,17 @@ namespace RPSLS
         {
             
            
-            while ((playerOne.score != 3) || (playerTwo.score != 3))
+            while ((playerOne.score != 3) || (playerTwo.score !=3))
             {
-                playerOne.ChooseGesture();
-                playerTwo.ChooseGesture();
+                if (playerOne.score == 3 || playerTwo.score == 3)
+                {
+                    break;
+                }
+
+
+                    playerOne.ChooseGesture();
+                    playerTwo.ChooseGesture();
+               
 
 
                 if (playerOne.ChooseGesture == playerTwo.ChooseGesture)
@@ -118,15 +125,15 @@ namespace RPSLS
                     {
                         if (playerTwo.chosenGesture == "lizard"|| playerTwo.chosenGesture == "scissors")
                         {
-                            Console.WriteLine($"{playerOne.name} you have won{playerOne.chosenGesture}crushes {playerTwo.chosenGesture}");
+                            Console.WriteLine($"{playerOne.name} you have won {playerOne.chosenGesture} crushes {playerTwo.chosenGesture}");
                             playerOne.score++;
                         }
                         else if (playerTwo.chosenGesture == "paper")
                         {
-                            Console.WriteLine($"{playerOne.name} you lose. Paper covers rock");
+                            Console.WriteLine($"{playerOne.name} lose. Paper covers rock");
                             playerTwo.score++;
                         }
-                        else if(playerOne.chosenGesture == "spock")
+                        else if(playerTwo.chosenGesture == "spock")
                         {
                             Console.WriteLine($"{playerOne.name} you lose. Spock vaporizes rock");
                             playerTwo.score++;
@@ -189,7 +196,17 @@ namespace RPSLS
                         {
                             Console.WriteLine($"{playerOne.name} wins. Spock crushes scissors");
                             playerOne.score++;
-                                
+                        }
+                        else if (playerTwo.chosenGesture == "paper")
+                        {
+                            Console.WriteLine($"{playerOne.name} loses. Paper disproves Spock");
+                            playerTwo.score++;
+                        }
+                        else if (playerTwo.chosenGesture == "lizard")
+                        {
+                            Console.WriteLine($"{playerOne.name} loses. Lizard poisons spock");
+                            playerTwo.score++;
+                            
                         }
                     }
                 }
@@ -217,11 +234,11 @@ namespace RPSLS
         {
             if (playerOne.score == 3)
             {
-                Console.WriteLine("Player One has won.");
+                Console.WriteLine($"{playerOne.name} has won.");
             }
             else if (playerTwo.score == 3)
             
-                Console.WriteLine("Player two has won.");
+                Console.WriteLine($"{playerTwo.name} has won.");
 
             
 
