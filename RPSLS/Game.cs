@@ -113,11 +113,9 @@ namespace RPSLS
                
 
 
-                if (playerOne.ChooseGesture == playerTwo.ChooseGesture)
+                if (playerOne.chosenGesture == playerTwo.chosenGesture)
                 {
                     Console.WriteLine("It is a tie.");
-                    
-
                 }
                 else
                 {
