@@ -54,7 +54,7 @@ namespace RPSLS
 
         public int ChooseNumberOfHumanPlayers()
         {
-            Console.WriteLine("How many human players will there be playing? One or two?");
+            Console.WriteLine("How many human players will there be playing? 1 or 2?");
             int numberofplayers = Convert.ToInt32(Console.ReadLine());
             return numberofplayers;
         }

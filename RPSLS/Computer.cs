@@ -19,9 +19,7 @@ namespace RPSLS
             
             Random random = new Random();
             this.name = name;
-            gestures = new List<string> { "rock", "paper", "scissors", "lizard", "spock" };
-            chosenGesture = "";
-            score = 0;
+           
             }
 
 
